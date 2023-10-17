@@ -12,3 +12,14 @@ body {
     background-attachment: fixed;
     background-position: center;
   }
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  padding-left: 50px;
+  z-index: 5;
+  /* Place the navigation bar above the overlay */
+}
