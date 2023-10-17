@@ -70,3 +70,8 @@ nav a {
   color: #ffffff;
   /* Set the font color */
 }
+
+nav a:hover {
+  color: #FF963A;
+  /* Change font color on hover */
+}
