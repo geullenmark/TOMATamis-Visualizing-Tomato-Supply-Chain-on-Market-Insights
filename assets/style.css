@@ -6,7 +6,7 @@ body {
     width: 100%;
     height: 100vh;
     background-image: url('assets/background.jpg');
-    /* Replace with your image file path */
+    /* Replace with your image file path */     
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -46,4 +46,27 @@ body::after {
 
 #logo {
   width: 200px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px;
+  display: flex;
+  padding-right: 600px;
+  /* Display navigation items horizontally */
+  z-index: 5;
+  /* Place the navigation bar above the overlay */
+}
+
+nav li {
+  margin-right: 50px;
+  z-index: 5;
+  /* Place the navigation bar above the overlay */
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  /* Set the font color */
 }
