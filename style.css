@@ -123,13 +123,10 @@ nav a:hover {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  height: 100vh;
-  margin-left: 50px;
-  /* Add left padding of 50px */
+  height: 70vh;
+  margin-left: 100px;
   position: relative;
-  /* Add position property */
   z-index: 2;
-  /* Ensure content appears above the overlay */
 }
 
 /* Heading 1 style */
