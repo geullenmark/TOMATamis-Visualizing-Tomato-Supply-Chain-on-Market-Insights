@@ -92,6 +92,38 @@ nav a:hover {
   /* Align it to the right */
 }
 
+/* Horizontal line below the heading */
+.center-left-content hr {
+  width: 65%;
+  /* Make the line full-width */
+  border: 2px solid #ffffff;
+  margin: 10px 0;
+}
+
+/* Paragraph style */
+.center-left-content p {
+  font-size: 18px;
+  color: #ffffff;
+  margin: 0px;
+}
+
+/* Clickable square with text centered */
+.square {
+  width: 190px;
+  height: 50px;
+  background-color: #FF963A;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  /* Add top margin for spacing */
+  /* Add z-index with a value of 3 */
+  z-index: 3;
+  /* Adjust as needed z-index*/
+}
+
+
 .sign-in-button a {
   text-decoration: none;
   color: #ffffff;
@@ -133,4 +165,19 @@ nav a:hover {
   /* Adjust the margin as needed to control the spacing */
   line-height: 1;
   /* Adjust line-height for closer spacing */
+}
+
+/* Horizontal line below the heading */
+.center-left-content hr {
+  width: 65%;
+  /* Make the line full-width */
+  border: 2px solid #ffffff;
+  margin: 10px 0;
+}
+
+/* Paragraph style */
+.center-left-content p {
+  font-size: 18px;
+  color: #ffffff;
+  margin: 0px;
 }
