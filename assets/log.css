@@ -20,3 +20,20 @@ body::after {
   z-index: 1;
   /* Ensure the overlay appears above the background image */
 }
+.logo {
+  width: 70%;
+  /* Adjust the logo size as needed for medium size */
+  height: auto;
+  /* Use auto for height to maintain aspect ratio */
+  display: block;
+  margin: 0 auto 20px;
+  /* Center the logo vertically and add space below it */
+}
+
+form * {
+  font-family: 'Poppins', sans-serif;
+  color: #000000;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
