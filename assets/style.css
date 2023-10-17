@@ -30,3 +30,26 @@ body::after {
   z-index: 1;
   /* Ensure the overlay appears above the background image */
 }
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  padding-left: 50px;
+  z-index: 5;
+  /* Place the navigation bar above the overlay */
+}
+
+#logo-container {
+  text-align: center;
+  /* Center the logo horizontally */
+  z-index: 5;
+  /* Place the navigation bar above the overlay */
+}
+
+#logo {
+  width: 200px;
+  /* Set the width of the logo (adjust as needed) */
+}
