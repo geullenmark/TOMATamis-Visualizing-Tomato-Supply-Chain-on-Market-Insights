@@ -1,19 +1,19 @@
 /* Global Styles */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    width: 100%;
-    height: 100vh;
-    background-image: url('assets/background.jpg');
-    /* Replace with your image file path */     
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  height: 100vh;
+  background-image: url('assets/background.jpg');
+  /* image background */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
 
-  /* Gradient Overlay */
+/* Gradient Overlay */
 body::after {
   content: "";
   position: fixed;
@@ -26,7 +26,9 @@ body::after {
   height: 100%;
   /* Cover the full height of the viewport */
   background: linear-gradient(to bottom right, rgba(23, 59, 35, 1), rgba(255, 255, 255, 0));
+  /* Adjust opacity and colors (Group Edited) */
   z-index: 1;
+  /* Ensure the overlay appears above the background image */
 }
 
 /* Navigation Bar */
@@ -37,15 +39,19 @@ body::after {
   padding: 20px;
   padding-left: 50px;
   z-index: 5;
+  /* Place the navigation bar above the overlay */
 }
 
 #logo-container {
   text-align: center;
+  /* Center the logo horizontally */
   z-index: 5;
+  /* Place the navigation bar above the overlay */
 }
 
 #logo {
   width: 200px;
+  /* Set the width of the logo (adjust as needed) */
 }
 
 nav ul {
@@ -76,20 +82,64 @@ nav a:hover {
   /* Change font color on hover */
 }
 
-.sign-in-button {
+.button-container {
   display: flex;
   align-items: center;
   padding: 0 20px;
   margin-top: 20px;
-  margin-right: 50px;
-  background-color: transparent;
   z-index: 5;
   position: absolute;
-  /* Position it absolutely within the navbar */
   top: 0;
-  /* Align it to the top */
   right: 0;
-  /* Align it to the right */
+}
+
+.sign-in-button, .sign-up-button {
+  margin-right: 20px;
+  background-color: transparent;
+}
+
+.sign-in-button a, .sign-up-button a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 15px;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+  padding: 5px 30px;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.sign-in-button a:hover, .sign-up-button a:hover {
+  background-color: #FF963A;
+  color: #000000;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+}
+
+/* Container for left-aligned content */
+/* Style for the center-left content */
+.center-left-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+  margin-left: 50px;
+  /* Add left padding of 50px */
+  position: relative;
+  /* Add position property */
+  z-index: 2;
+  /* Ensure content appears above the overlay */
+}
+
+/* Heading 1 style */
+.center-left-content h1 {
+  font-size: 55px;
+  color: #ffffff;
+  margin: 5px 0;
+  /* Adjust the margin as needed to control the spacing */
+  line-height: 1;
+  /* Adjust line-height for closer spacing */
 }
 
 /* Horizontal line below the heading */
@@ -113,84 +163,23 @@ nav a:hover {
   height: 50px;
   background-color: #FF963A;
   border-radius: 8px;
+  /* Reduced by 10% */
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 20px;
   /* Add top margin for spacing */
+  /* Add z-index with a value of 2 */
+  z-index: 3;
+}
+
+/* Style for the "Get Started" text */
+.square a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 16px;
   /* Add z-index with a value of 3 */
   z-index: 3;
-  /* Adjust as needed z-index*/
+  /* Adjust as needed */
 }
-
-
-  /* Style for the "Get Started" text */
-  .square a {
-    text-decoration: none;
-    color: #FFFFFF;
-    font-weight: bold;
-    font-size: 16px;
-    /* Add z-index with a value of 3 */
-    z-index: 3;
-    /* Adjust as needed */
-  }
-
-
-.sign-in-button a {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: normal;
-  font-size: 15px;
-  border: 2px solid #ffffff;
-  border-radius: 50px;
-  padding: 5px 30px;
-  transition: background-color 0.3s, color 0.3s, border 0.3s;
-}
-
-.sign-in-button a:hover {
-  background-color: #FF963A;
-  color: #000000;
-  border: 2px solid #ffffff;
-  border-radius: 50px;
-}
-
-/* Container for left-aligned content */
-/* Style for the center-left content */
-.center-left-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  height: 100vh;
-  margin-left: 50px;
-  position: relative;
-  /* Add position property */
-  z-index: 2;
-  /* Ensure content appears above the overlay */
-}
-
-/* Heading 1 style */
-.center-left-content h1 {
-  font-size: 55px;
-  color: #ffffff;
-  margin: 5px 0;
-  /* Adjust the margin as needed to control the spacing */
-  line-height: 1;
-  /* Adjust line-height for closer spacing */
-}
-
-/* Horizontal line below the heading */
-.center-left-content hr {
-  width: 45%;
-  /* Make the line full-width */
-  border: 2px solid #ffffff;
-  margin: 10px 0;
-}
-
-/* Paragraph style */
-.center-left-content p {
-  font-size: 18px;
-  color: #ffffff;
-  margin: 0px;
-}
-
