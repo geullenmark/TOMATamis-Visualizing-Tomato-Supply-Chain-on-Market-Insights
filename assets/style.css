@@ -12,6 +12,30 @@ body {
     background-attachment: fixed;
     background-position: center;
   }
+<<<<<<< HEAD
+
+  /* Gradient Overlay */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* Cover the full width of the viewport */
+  height: 100%;
+  /* Cover the full height of the viewport */
+  background: linear-gradient(to bottom right, rgba(23, 59, 35, 1), rgba(255, 255, 255, 0));
+  /* Adjust opacity and colors as needed */
+  z-index: 1;
+  /* Ensure the overlay appears above the background image */
+}
+
+
+=======
+
+
 
 /* Navigation Bar */
 .navbar {
@@ -23,3 +47,5 @@ body {
   z-index: 5;
   /* Place the navigation bar above the overlay */
 }
+
+>>>>>>> ebf3c6eeeeccaff984e24567acb3307c2c14aaaf
