@@ -72,5 +72,15 @@ form * {
   border: none;
 }
 
-
->>>>>>> 5ac42ff1c00f66304273b744acb3cc28d572a9db
+input {
+  display: block;
+  height: 50px;
+  width: calc(100% - 20px);
+  /* Adjusted width based on button and padding */
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+}
