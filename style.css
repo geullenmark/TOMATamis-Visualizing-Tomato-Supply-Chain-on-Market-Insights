@@ -194,19 +194,3 @@ nav a:hover {
   margin: 0px;
 }
 
-/* Clickable square with text centered */
-.square {
-  width: 190px;
-  height: 50px;
-  background-color: #FF963A;
-  border-radius: 8px;
-  /* Reduced by 10% */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-  /* Add top margin for spacing */
-  /* Add z-index with a value of 3 */
-  z-index: 3;
-  /* Adjust as needed */
-}
