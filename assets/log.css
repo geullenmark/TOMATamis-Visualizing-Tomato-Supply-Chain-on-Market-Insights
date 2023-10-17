@@ -30,14 +30,6 @@ body::after {
   /* Center the logo vertically and add space below it */
 }
 
-form * {
-  font-family: 'Poppins', sans-serif;
-  color: #000000;
-  letter-spacing: 0.5px;
-  outline: none;
-  border: none;
-}
-
 background {
   width: 100%;
   height: 100vh;
@@ -62,3 +54,12 @@ form {
   padding: 50px 35px;
   z-index: 2;
 }
+
+form * {
+  font-family: 'Poppins', sans-serif;
+  color: #000000;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+
