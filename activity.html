@@ -7,7 +7,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.slim.js"></script>
   </head>
-   <body>
+  
      <script>
         const firebaseConfig = {
         apiKey: "AIzaSyCe7-pIB8WP9ZQntTw3YYFJlzrMaL0GU8w",
@@ -20,8 +20,7 @@
 
         firebase.initializeApp(firebaseConfig);
             const db = firebase.database();
-
-
+       
             $(document).ready(function(){
                 $("#addData").click(function(){
                     
@@ -46,7 +45,26 @@
                 });
               });
     </script>
-
-      
+  
+  <body>
+    <h1>SIGN UP FORM</h1>
+    <div>
+      <input type="text" value="" id="BName" placeholder="Business Name"/>
+      <input type="text" value="" id="Loc" placeholder="Location"/>
+      <input type="text" value="" id="uname" placeholder="Username" />
+      <input type="text" value="" id="pword" placeholder="Password" />
+      <button id="addData">Save</button>
+    </div>
+    
+    <h1>LOG IN FORM</h1>
+    <div>
+      <input type="text" value="" id="uname" placeholder="Username"/>
+      <input type="text" value="" id="pword" placeholder="Password"/>
+      <button id="#">Login</button>
+    </div>
+    <div id="result">
+      <h1 id="BName"></h1>
+      <h1 id="Loc"></h1>
+    </div>
     </body>
 </html>
