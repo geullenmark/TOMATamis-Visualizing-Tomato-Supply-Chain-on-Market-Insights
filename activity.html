@@ -8,7 +8,45 @@
     <script src="https://code.jquery.com/jquery-3.7.1.slim.js"></script>
   </head>
    <body>
-     
+     <script>
+        const firebaseConfig = {
+        apiKey: "AIzaSyCe7-pIB8WP9ZQntTw3YYFJlzrMaL0GU8w",
+        authDomain: "tomatamis-c8315.firebaseapp.com",
+        projectId: "tomatamis-c8315",
+        storageBucket: "tomatamis-c8315.appspot.com",
+        messagingSenderId: "242980257775",
+        appId: "1:242980257775:web:eb91bf5b27716969c9c01a"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+            const db = firebase.database();
+
+
+            $(document).ready(function(){
+                $("#addData").click(function(){
+                    
+                    var BName = $("#BName").val();
+                    var Loc = $("#Loc").val();
+                    var uname = $("#uname").val();
+                    var pword = $("#pword").val();
+
+                    db.ref("Name/"+BName).set({
+                    name: BName,
+                    Location: Loc,
+                    username: uname,
+                    password: pword
+
+                    })
+                    .then(() => {
+                        console.log("Data successfully written!");
+                    })
+                    .catch((error) => {
+                        console.error("Error writing data: ", error);
+                    });
+                });
+              });
+    </script>
+
       
     </body>
 </html>
