@@ -22,7 +22,6 @@
 
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
-    
 
     $(document).ready(function(){
         $("#addData").click(function(){
@@ -55,7 +54,7 @@
        
         // Login Button Click Event
         $("#login").click(function () {
-            const uname = $("#login-username").val();
+            const unameOremail1 = $("#login-username").val();
             const pword = $("#login-password").val();
 
             const userRef = db.ref("Business");
@@ -64,7 +63,7 @@
                     let userFound = false;
                     snapshot.forEach((childSnapshot) => {
                         const data = childSnapshot.val();
-                        if (data.username === uname && data.password === pword) {
+                        if ((data.username === unameOremail1 || data.email === unameOremail1 ) && data.password === pword) {
                             // User found, perform actions here
                             console.log("Login successfully, Welcome " + data.username + "!");
                             userFound = true;
