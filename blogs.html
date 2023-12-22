@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>TOMATamis</title>
+    <link rel="icon" href="assets/icon.png" type="image/png">
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    
+    
+  </head>
+  <body>
+    <div class="navbar">
+      <!-- Logo -->
+      <div id="logo-container">
+        <a href="index.html">
+          <img id="logo" src="assets/logo.png" alt="Logo">
+        </a>
+      </div>
+  
+       <!--  Menu Toggle Button (Burger Icon) -->
+       <div class="menu-toggle" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+  
+      <!-- Navigation Menu -->
+      <nav id="navbar">
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  
+    <div class="navbar">
+      <!-- Sign In and Sign Up Buttons Container -->
+      <div class="button-container">
+        <div class="sign-in-button">
+          <a href="login.html">Log In</a>
+        </div>
+        <div class="sign-up-button">
+          <a href="sign-up.html">Sign Up</a>
+        </div>
+      </div>
+    </div>
+
+
+  <style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  height: 100vh;
+  background-image: url('assets/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, rgba(23, 59, 35, 1), rgba(255, 255, 255, 0));
+  z-index: -10;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  padding-left: 50px;
+  z-index: 5;
+}
+
+#logo-container {
+  text-align: center;
+  z-index: 5;
+}
+
+#logo {
+  width: 200px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px;
+  display: flex;
+  padding-right: 600px;
+  z-index: 5;
+}
+
+nav li {
+  margin-right: 50px;
+  z-index: 5;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+nav a:hover {
+  color: #FF963A;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  margin-top: 20px;
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.sign-in-button, .sign-up-button {
+  margin-right: 20px;
+  background-color: transparent;
+}
+
+.sign-in-button a, .sign-up-button a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 15px;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+  padding: 5px 30px;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.sign-in-button a:hover, .sign-up-button a:hover {
+  background-color: #FF963A;
+  color: #000000;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+}
+
+    .row {
+      display: flex;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .column {
+      flex: 1;
+      padding: 20px;
+      text-align: justify;
+      background-color: rgba(255, 255, 255, 0.07);
+      border-radius: 10px;
+      backdrop-filter: blur(50px);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+      z-index: 10; /* Set a higher z-index value */
+      margin: 20px;
+      width: 1000px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="row">
+  <div class="column">
+    <h2>Services</h2>
+    <P>Welcome to TOMATamis, your premier E-commerce system specializing in providing localized tomato crops to meet your culinary needs. Our services extend beyond just delivering tomatoes; we offer a unique experience that combines the freshest produce with cutting-edge technology. At TOMATamis, we understand the importance of transparency, which is why we provide a daily supply trend, allowing you to stay informed about the availability of your favorite tomatoes. Our platform goes beyond traditional E-commerce by offering detailed insights into tomato sales distribution, ensuring that you are not only receiving the best quality tomatoes but also contributing to sustainable and equitable agricultural practices. With TOMATamis, you not only enjoy the convenience of online shopping but also support local farmers and witness the journey of your tomatoes from farm to table. Experience the future of tomato shopping with TOMATamis – where freshness meets technology.</P>
+  </div>
+</body>
+
+</html>

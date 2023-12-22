@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>TOMATamis</title>
+    <link rel="icon" href="assets/icon.png" type="image/png">
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    
+    
+  </head>
+  <body>
+    <div class="navbar">
+      <!-- Logo -->
+      <div id="logo-container">
+        <a href="index.html">
+          <img id="logo" src="assets/logo.png" alt="Logo">
+        </a>
+      </div>
+  
+       <!-- Menu Toggle Button (Burger Icon) -->
+       <div class="menu-toggle" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+  
+      <!-- Navigation Menu -->
+      <nav id="navbar">
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  
+    <div class="navbar">
+      <!-- Sign In and Sign Up Buttons Container -->
+      <div class="button-container">
+        <div class="sign-in-button">
+          <a href="login.html">Log In</a>
+        </div>
+        <div class="sign-up-button">
+          <a href="sign-up.html">Sign Up</a>
+        </div>
+      </div>
+    </div>
+
+
+  <style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  height: 100vh;
+  background-image: url('assets/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, rgba(23, 59, 35, 1), rgba(255, 255, 255, 0));
+  z-index: -10;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  padding-left: 50px;
+  z-index: 5;
+}
+
+#logo-container {
+  text-align: center;
+  z-index: 5;
+}
+
+#logo {
+  width: 200px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px;
+  display: flex;
+  padding-right: 600px;
+  z-index: 5;
+}
+
+nav li {
+  margin-right: 50px;
+  z-index: 5;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+nav a:hover {
+  color: #FF963A;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  margin-top: 20px;
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.sign-in-button, .sign-up-button {
+  margin-right: 20px;
+  background-color: transparent;
+}
+
+.sign-in-button a, .sign-up-button a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 15px;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+  padding: 5px 30px;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.sign-in-button a:hover, .sign-up-button a:hover {
+  background-color: #FF963A;
+  color: #000000;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+}
+
+    .row {
+      display: flex;
+    }
+
+    .column {
+      flex: 1;
+      padding: 20px;
+      text-align: justify;
+      background-color: rgba(255, 255, 255, 0.07);
+      border-radius: 10px;
+      backdrop-filter: blur(50px);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+      z-index: 10;
+      margin: 20px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="row">
+    <!-- First Column -->
+    <div class="column">
+      <h2>Mission</h2>
+      <p>To revolutionize the Iloilo City tomato industry by empowering growers, distributors, and consumers
+        with data-driven insights and actionable solutions, fostering a sustainable and efficient e-commerce 
+        website that meets the evolving needs of the Iloilo City market, while ensuring a fair and balanced 
+        marketplace for all sellers.</p>
+    </div>
+
+    <!-- Second Column -->
+    <div class="column">
+      <h2>Vision</h2>
+      <p>We envision a future where Iloilo City tomato production is synchronized with demand, waste is minimized,
+        access to fresh, nutritious tomatoes is a reality for all Iloilo City residents, and Iloilo City becomes a
+        model for sustainable and efficient tomato production practices within the e-commerce landscape, with a
+        thriving and equitable marketplace for all sellers.</p>
+    </div>
+  </div>
+
+  <div class="column">
+    <h2>Goals</h2>
+    <ol>
+        <li>Enhance Production Efficiency in Iloilo City: Increase tomato production in Iloilo City by 20% within the next five years by providing Iloilo City growers with tailored recommendations based on location-specific data and insights, optimizing irrigation, fertilization, and pest management practices.
+        </li>
+        <li>Reduce Supply Chain Disruptions in Iloilo City: Optimize logistics strategies for tomato shipments within Iloilo City to reduce transportation time and minimize spoilage, achieving a 95% on-time delivery rate for all tomato shipments within Iloilo City.
+        </li>
+        <li>Balance Demand and Supply in Iloilo City: Implement a demand-forecasting system for tomatoes in Iloilo City that reduces overproduction and underproduction by 15%, ensuring market stability, reducing food waste, and stabilizing local tomato prices.
+        </li>
+        <li>Empower Iloilo City Stakeholders: Provide Iloilo City growers, distributors, and consumers with user-friendly tools and data visualizations to gain a comprehensive understanding of the Iloilo City tomato industry and make informed decisions, fostering collaboration and innovation.
+        </li>
+        <li>Establish Iloilo City as an E-commerce Hub for Tomatoes: Attract 50% of all Iloilo City tomato growers and distributors to the e-commerce website within three years, solidifying its position as the central hub for tomato-related transactions in Iloilo City.</li>
+        <li>Expand TOMATAMIS Reach: Expand the website's reach beyond Iloilo City to neighboring provinces and cities within the next five years, establishing a regional network for tomato e-commerce.
+        </li>
+        <li>Achieve Seller Equity and Market Balance: Implement the Iloilo City Tomato Seller Prioritization Model to ensure a fair and balanced distribution of orders among sellers, fostering a thriving and equitable marketplace that benefits all participants.
+Achieve Seller Equity and Market Balance: Implement the Iloilo City Tomato Seller Prioritization Model to ensure a fair and balanced distribution of orders among sellers, fostering a thriving and equitable marketplace that benefits all participants.
+        </li>
+      </ol>  
+  </div>
+</body>
+
+</html>

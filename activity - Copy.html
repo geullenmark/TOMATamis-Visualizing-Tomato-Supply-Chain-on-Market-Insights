@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TOMATamis</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"></script>
+</head>
+
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyCe7-pIB8WP9ZQntTw3YYFJlzrMaL0GU8w",
+        authDomain: "tomatamis-c8315.firebaseapp.com",
+        databaseURL: "https://tomatamis-c8315-default-rtdb.firebaseio.com",
+        projectId: "tomatamis-c8315",
+        storageBucket: "tomatamis-c8315.appspot.com",
+        messagingSenderId: "242980257775",
+        appId: "1:242980257775:web:eb91bf5b27716969c9c01a"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+    $(document).ready(function(){
+        $("#addData").click(function(){
+            var BName = $("#BName").val();
+            var Loc = $("#Loc").val();
+            var uname = $("#uname").val();
+            var pword = $("#pword").val();
+            var email1 = $("#email1").val();
+
+            // Get a reference to the "Business" node and use push to generate a unique key
+            var businessRef = db.ref("Business").push();
+
+            // Set the data using the unique key
+            businessRef.set({
+                name: BName,
+                location: Loc,
+                email: email1,
+                username: uname,
+                password: pword,
+                dateregister: dater
+            })
+            .then(() => {
+                console.log("Data successfully written!");
+                alert("Successfully signed up!");
+            })
+            .catch((error) => {
+                console.error("Error writing data: ", error);
+            });
+        });
+       
+        // Login Button Click Event
+        $("#login").click(function () {
+            const unameOremail1 = $("#login-username").val();
+            const pword = $("#login-password").val();
+
+            const userRef = db.ref("Business");
+            userRef.once("value")
+                .then((snapshot) => {
+                    let userFound = false;
+                    snapshot.forEach((childSnapshot) => {
+                        const data = childSnapshot.val();
+                        if ((data.username === unameOremail1 || data.email === unameOremail1 ) && data.password === pword) {
+                            // User found, perform actions here
+                            console.log("Login successfully, Welcome " + data.username + "!");
+                            userFound = true;
+                            $("#welcomeMessage").show();
+                            // Redirect to a user Information after successful login
+                            $("#businessNameResult").text("Business Name: " + data.name);
+                            $("#locationResult").text("Location: " + data.location);
+                            $("#usernameResult").text("Username: " + data.username);
+                            $("#emailResult").text("Email: " + data.email);
+                        }
+                    });
+                    
+                    if (!userFound) {
+                        console.error("Login failed. Please check your credentials.");
+                        alert("Login failed. Please check your credentials.");
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error fetching user data: " + error);
+                    alert("Error fetching user data. Please try again.");
+            });
+        });
+    });
+</script>
+
+<body>
+    <h1>SIGN UP FORM</h1>
+    <div>
+        <input type="text" value="" id="BName" placeholder="Business Name"/>
+        <input type="text" value="" id="Loc" placeholder="Location"/>
+        <input type="text" value="" id="uname" placeholder="Username" />
+        <input type="date" value="" id="dater" placeholder="Date Register" />
+        <input type="email" value="" id="email1" placeholder="Email" />
+        <input type="password" value="" id="pword" placeholder="Password" />
+        <button id="addData">Sign Up</button>
+    </div>
+
+    <h1>LOG IN FORM</h1>
+    <div>
+        <label for="username">Username</label>
+        <input type="text" value="" id="login-username" placeholder="Username or Email"/>
+        <input type="password" value="" id="login-password" placeholder="Password"/>
+        <button id="login">Login</button>
+    </div>
+    <div id="result">
+        <h1 id="welcomeMessage" style="display: none;">Welcome to your Information Dashboard, your personal hub for identifying your online presence.</h1>
+        <h1 id="businessNameResult"></h1>
+        <h1 id="locationResult"></h1>
+        <p id="usernameResult"></p>
+        <p id="emailResult"></p>
+    </div>
+</body>
+</html>

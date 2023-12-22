@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>TOMATamis</title>
+  <link rel="icon" href="assets/icon.png" type="image/png">
+  <link rel="stylesheet" type="text/css" href="assets/log1.css">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+</head>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyCe7-pIB8WP9ZQntTw3YYFJlzrMaL0GU8w",
+    authDomain: "tomatamis-c8315.firebaseapp.com",
+    databaseURL: "https://tomatamis-c8315-default-rtdb.firebaseio.com",
+    projectId: "tomatamis-c8315",
+    storageBucket: "tomatamis-c8315.appspot.com",
+    messagingSenderId: "242980257775",
+    appId: "1:242980257775:web:eb91bf5b27716969c9c01a"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+
+  $(document).ready(function () {
+    $("form").submit(function (event) {
+      event.preventDefault();
+
+      const unameOremail1 = $("#login-username").val();
+      const pword = $("#login-password").val();
+
+      const userRef = firebase.database().ref("USERS");
+      // Try to find user by username
+      userRef.orderByChild("username").equalTo(unameOremail1).once("value")
+        .then((snapshot) => {
+          if (snapshot.exists()) {
+            // User found, check password
+            let userFound = false;
+            snapshot.forEach((childSnapshot) => {
+              const data = childSnapshot.val();
+              if (data.password === pword) {
+                // Password is correct
+                userFound = true;
+                console.log("Login successfully, Welcome " + data.username + "!");
+                $("#welcomeMessage").text("Login successfully, Welcome " + data.username + "!");
+                $("#welcomeMessage").show();
+                window.location.href = "products.html"; // Replace with your desired destination
+              }
+            });
+
+            if (!userFound) {
+              // Incorrect password
+              console.error("Login failed. Incorrect password.");
+              alert("Login failed. Please check your credentials.");
+            }
+          } else {
+            // If not found by username, try to find by email
+            // This assumes your user data structure has an "email" field
+            userRef.orderByChild("email").equalTo(unameOremail1).once("value")
+              .then((emailSnapshot) => {
+                if (emailSnapshot.exists()) {
+                  // User found, check password
+                  let userFoundByEmail = false;
+                  emailSnapshot.forEach((emailChildSnapshot) => {
+                    const dataByEmail = emailChildSnapshot.val();
+                    if (dataByEmail.password === pword) {
+                      // Password is correct
+                      userFoundByEmail = true;
+                      console.log("Login successfully, Welcome " + dataByEmail.username + "!");
+                      $("#welcomeMessage").text("Login successfully, Welcome " + dataByEmail.username + "!");
+                      $("#welcomeMessage").show();
+                      window.location.href = "products.html"; // Replace with your desired destination
+                    }
+                  });
+
+                  if (!userFoundByEmail) {
+                    // Incorrect password
+                    console.error("Login failed. Incorrect password.");
+                    alert("Login failed. Please check your credentials.");
+                  }
+                } else {
+                  // User not found by email either
+                  console.error("Login failed. User not found.");
+                  alert("Login failed. Please check your credentials.");
+                }
+              })
+              .catch((emailError) => {
+                console.error("Error fetching user data by email: " + emailError);
+                alert("Error fetching user data. Please try again.");
+              });
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching user data: " + error);
+          alert("Error fetching user data. Please try again.");
+        });
+    });
+  });
+</script>
+
+<body>
+  <div class="background"></div>
+  <div class="container">
+    <form>
+      <div class="logo-container">
+        <img class="logo" src="assets/logo.png" alt="Logo" width="100" height="100">
+      </div>
+      <h3>USER</h3>
+      <label for="username">Username</label>
+      <input type="text" value="" id="login-username" placeholder="Username or Email" />
+      <label for="password">Password</label>
+      <input type="password" value="" id="login-password" placeholder="Password" />
+      <a href="#" class="forgot-password">Forgot Password?</a>
+      <button id="login">Log In</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

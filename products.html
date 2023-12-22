@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Home</title>
+    <link rel="icon" href="assets/icon.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="assets/products.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    
+</head>
+<body>
+    <div class="navbar">
+        <!-- Logo -->
+        <div id="logo-container">
+            <a href="products.html">
+                <img id="logo" src="assets/logo.png" alt="Logo">
+            </a>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav id="navbar">
+            <ul>
+                <li><a href="products.html">Home</a></li>
+                <li><a href="Shop final.html">Shop</a></li>
+                <li><a href="#">Notifications</a></li>
+                <li><a href="Selling.html">Start Selling</a></li>
+                <li class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit">Search</button>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Login and Sign Up Buttons Container -->
+        <div class="button-container">
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                </svg>
+                <i class="bi bi-cart2"></i>
+            </a>
+        </div>
+
+        <!-- Profile Logo with Account Name and Logout Box -->
+        <div class="profile-container" id="profile-container">
+            <a href="#" id="profile-link" onclick="toggleLogoutBox()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z"/>
+                </svg>
+                <span id="username">Account</span>
+            </a>
+            <div id="logout-box" onclick="logout()">
+                <a href="#" style="display: block; width: 100%; height: 100%;">Logout</a>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="slider-container">
+        <!-- Slides go -->
+        <div class="mySlides">
+            <img src="assets/ad/ad1.png" style="width:100%">
+            <div class="slide-text">
+                <h1>TOMATamis Harvest: Elevate Your Culinary Experience with Local Freshness</h1>
+                <p>Explore the rich tapestry of flavors crafted by Panay Region farmers with our exquisite range of local tomato products at TOMATamis</p>
+            </div>
+        </div>
+
+        <div class="mySlides">
+            <img src="assets/ad/ad2.png" style="width:100%">
+            <div class="slide-text">
+                <h1>TOMATamis Panay Treasures: A Symphony of Local Tomato Delights</h1>
+                <p>Embark on a gastronomic journey through the heart of Panay's agricultural legacy with TOMATamis, your premier destination for the most exquisite local tomato products. </p>
+            </div>
+        </div>
+
+        <!-- Previous and Next buttons -->
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+
+        <div class="demandtrend">
+            <canvas id="supplyChart"></canvas>
+            <canvas id="salesChart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="products-data.js"></script>
+    <script src="script.js"></script>
+    <script src="products.js"></script>
+
+    <script>
+        function toggleLogoutBox() {
+            var logoutBox = document.getElementById("logout-box");
+            logoutBox.style.display = (logoutBox.style.display === "block") ? "none" : "block";
+        }
+
+        function logout() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

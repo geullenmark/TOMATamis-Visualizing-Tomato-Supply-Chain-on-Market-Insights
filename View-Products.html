@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- the styles and scripts -->
+    <link rel="icon" href="assets/icon.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="assets/products.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="navbar">
+        <!-- Logo -->
+        <div id="logo-container">
+            <a href="products.html">
+                <img id="logo" src="assets/logo.png" alt="Logo">
+            </a>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav id="navbar">
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="Selling.html">Add Products</a></li>
+                <li><a href="View-Products.html">View Products</a></li>
+                <li><a href="#">Notifications</a></li>
+            </ul>
+        </nav>
+
+        <!-- Login and Sign Up Buttons Container -->
+        <div class="button-container">
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-cart2" viewBox="0 0 16 16">
+                    <path
+                        d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0" />
+                </svg>
+                <i class="bi bi-cart2"></i>
+            </a>
+        </div>
+
+        <!-- Profile -->
+        <div class="profile-container">
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-person" viewBox="0 0 16 16">
+                    <path
+                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z" />
+                </svg>
+                Account
+                <i class="bi bi-person"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Product Description</th>
+                            <th>Product Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tomato</td>
+                            <td>The flesh inside is juicy and succulent, encasing a cluster of seeds</td>
+                            <td>₱50</td>
+                            <td>
+                                <button type="button" class="btn btn-success">Update</button>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Roma Tomatoes</td>
+                            <td>Known for their slightly tangy and sweet taste, tomatoes are versatile and commonly used in salads, sauces, and a variety of culinary dishes.</td>
+                            <td>₱70</td>
+                            <td>
+                                <button type="button" class="btn btn-success">Update</button>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cherry Tomatoes</td>
+                            <td>With a smooth skin and refreshing flavor, they add a burst of freshness to many dishes.</td>
+                            <td>₱45</td>
+                            <td>
+                                <button type="button" class="btn btn-success">Update</button>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Grape Tomatoes</td>
+                            <td>Grape tomatoes are small, bite-sized tomatoes that resemble grapes in shape. These miniature tomatoes are known for their sweet and flavorful taste. </td>
+                            <td>₱32</td>
+                            <td>
+                                <button type="button" class="btn btn-success">Update</button>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+<script src="Viewproducts.js"></script>
+</body>
+
+</html>

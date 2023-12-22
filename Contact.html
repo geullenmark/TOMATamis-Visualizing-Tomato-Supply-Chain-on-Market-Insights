@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>TOMATamis</title>
+  <link rel="icon" href="assets/icon.png" type="image/png">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!--Google Font-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+<body>
+  <div class="navbar">
+    <!-- Logo -->
+    <div id="logo-container">
+      <a href="index.html">
+        <img id="logo" src="assets/logo.png" alt="Logo">
+      </a>
+    </div>
+
+     <!--  Menu Toggle Button (Burger Icon) -->
+     <div class="menu-toggle" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav id="navbar">
+      <ul>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="navbar">
+    <!-- Sign In and Sign Up Buttons Container -->
+    <div class="button-container">
+      <div class="sign-in-button">
+        <a href="login.html">Log In</a>
+      </div>
+      <div class="sign-up-button">
+        <a href="sign-up.html">Sign Up</a>
+      </div>
+    </div>
+  </div>
+
+    <!-- Content Page -->
+
+    <div class="container">
+        <form>
+   
+      
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      
+          <label for="province">Province</label>
+          <select id="province" name="province">
+            <option value="aklan">Aklan</option>
+            <option value="antique">Antique</option>
+            <option value="capiz">Capiz</option>
+            <option value="iloilo">Iloilo</option>
+          </select>
+      
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      
+          <input type="submit" value="Submit">
+      
+        </form>
+      </div>
+      </div>
+  <script src="script.js"></script>
+</body>
+</html>
