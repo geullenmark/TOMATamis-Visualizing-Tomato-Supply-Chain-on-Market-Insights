@@ -6,14 +6,12 @@ body {
   width: 100%;
   height: 100vh;
   background-image: url('assets/background.jpg');
-  /* image background */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
 
-/* Gradient Overlay */
 body::after {
   content: "";
   position: fixed;
@@ -22,16 +20,44 @@ body::after {
   bottom: 0;
   left: 0;
   width: 100%;
-  /* Cover the full width of the viewport */
   height: 100%;
-  /* Cover the full height of the viewport */
   background: linear-gradient(to bottom right, rgba(23, 59, 35, 1), rgba(255, 255, 255, 0));
-  /* Adjust opacity and colors (Group Edited) */
   z-index: 1;
-  /* Ensure the overlay appears above the background image */
 }
-
-/* Navigation Bar */
+form {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 430px;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 30px;
+  z-index: 2;
+}
+form h3 {
+  display: block;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  font-weight: 500;
+  color: #f1f1f1;
+}
+form p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #f1f1f1;
+}
+form * {
+  font-family: 'Poppins', sans-serif;
+  color: #000000;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -39,19 +65,15 @@ body::after {
   padding: 20px;
   padding-left: 50px;
   z-index: 5;
-  /* Place the navigation bar above the overlay */
 }
 
 #logo-container {
   text-align: center;
-  /* Center the logo horizontally */
   z-index: 5;
-  /* Place the navigation bar above the overlay */
 }
 
 #logo {
   width: 200px;
-  /* Set the width of the logo (adjust as needed) */
 }
 
 nav ul {
@@ -60,26 +82,21 @@ nav ul {
   margin: 10px;
   display: flex;
   padding-right: 600px;
-  /* Display navigation items horizontally */
   z-index: 5;
-  /* Place the navigation bar above the overlay */
 }
 
 nav li {
   margin-right: 50px;
   z-index: 5;
-  /* Place the navigation bar above the overlay */
 }
 
 nav a {
   text-decoration: none;
   color: #ffffff;
-  /* Set the font color */
 }
 
 nav a:hover {
   color: #FF963A;
-  /* Change font color on hover */
 }
 
 .button-container {
@@ -116,8 +133,6 @@ nav a:hover {
   border-radius: 50px;
 }
 
-/* Container for left-aligned content */
-/* Style for the center-left content */
 .center-left-content {
   display: flex;
   flex-direction: column;
@@ -129,54 +144,99 @@ nav a:hover {
   z-index: 2;
 }
 
-/* Heading 1 style */
 .center-left-content h1 {
   font-size: 55px;
   color: #ffffff;
   margin: 5px 0;
-  /* Adjust the margin as needed to control the spacing */
   line-height: 1;
-  /* Adjust line-height for closer spacing */
 }
 
-/* Horizontal line below the heading */
 .center-left-content hr {
   width: 45%;
-  /* Make the line full-width */
   border: 2px solid #ffffff;
   margin: 10px 0;
 }
 
-/* Paragraph style */
 .center-left-content p {
   font-size: 18px;
   color: #ffffff;
   margin: 0px;
 }
 
-/* Clickable square with text centered */
 .square {
   width: 190px;
   height: 50px;
   background-color: #FF963A;
   border-radius: 8px;
-  /* Reduced by 10% */
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 20px;
-  /* Add top margin for spacing */
-  /* Add z-index with a value of 2 */
   z-index: 3;
+  position: relative;
+  text-decoration: none;
 }
 
-/* Style for the "Get Started" text */
 .square a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #173B23;
   font-weight: bold;
   font-size: 16px;
-  /* Add z-index with a value of 3 */
   z-index: 3;
-  /* Adjust as needed */
+  
 }
+
+.square p {
+  color: #173B23; 
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0; 
+}
+.square svg {
+  fill: #173B23; 
+  margin-right: 5px;
+}
+.services {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; 
+  max-width: 900px; 
+  background-color: rgba(255, 255, 255, 0.178);
+  border-radius: 10px;
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 20px;
+  z-index: 3;
+}
+.services p{
+  text-align: justify;
+}
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical
+}
+
+
+input[type=submit] {
+  background-color: #173B23;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #FF963A;
+  color:#000000;
+}
+
